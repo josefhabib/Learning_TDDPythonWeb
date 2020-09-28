@@ -4,7 +4,7 @@
 # 3. Import the module to be tested
 
 import unittest
-from codeFolder import func_unittestSetup
+import func_unittestSetup
 
 # Create Test Cases: Build new class that inherits from unittest's TestCase
 
