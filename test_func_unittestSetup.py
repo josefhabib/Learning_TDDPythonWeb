@@ -22,6 +22,24 @@ class test_unittestSetupModule(unittest.TestCase):
         self.assertEqual(func_unittestSetup.mult(-5,-2), 10)
         self.assertEqual(func_unittestSetup.mult(3,-3), -9)
 
+    def test_div(self):
+# Task:     Test error handling in code
+#
+# Challenge:If code error handler correctly identified invalid data and raises an exception
+#            We want the unit test to PASS (not fail by registing the error raised in code)
+# 
+# Method 1: Let unittest call function on your behalf
+#       self.assertRaises(ValueError, func_unittestSetup.div(0,3)) >> WRONG SYNTAX: will lead to value error being raised (code abort)
+        self.assertRaises(ValueError, func_unittestSetup.div,0,3)
+        self.assertRaises(ValueError, func_unittestSetup.div,3,0)        
+# Method 2: Use context handler
+        with self.assertRaises(ValueError):
+            func_unittestSetup.div(0,3)
+        with self.assertRaises(ValueError):
+            func_unittestSetup.div(3,0)
+
+
+
 # Allow module to be executed directly 
 # (rather than having to execute unittest with the module as a parameter)
 # > With the addition of the line below, you can now run the unit test via
