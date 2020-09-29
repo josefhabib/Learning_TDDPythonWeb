@@ -3,6 +3,12 @@
 # 2. Import unittest library
 # 3. Import the module to be tested
 
+import sys
+
+#sys.path.insert(0,'..')
+
+print(sys.path)
+
 import unittest
 from codeFolder import func_unittestSetup
 
